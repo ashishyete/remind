@@ -14,6 +14,16 @@
 <script src="../js/jquery-1.8.3.js"></script>
 <script src="../js/jquery.validation.js"></script>
 
+<script type="text/javascript">
+// function for Singup page
+
+function signup(){
+	document.forms[0].action="${appUrl}/welcomeBanner";
+	document.forms[0].submit();
+}
+
+</script>
+
 </head>
 <body>
 	<table style="width: 100%">
@@ -67,7 +77,7 @@
 								Forgot Password ?</button></a>
 					</div>
 					<div align="right">
-						<a href="views/SignUp.jsp"><button id="prefill-signup_v1"
+						<a href="javascript:signup();"><button id="prefill-signup_v1"
 								type="button" class="ui mini basic button">
 								SignUp!</button></a>
 					</div>
