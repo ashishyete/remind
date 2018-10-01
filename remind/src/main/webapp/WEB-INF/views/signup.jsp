@@ -25,7 +25,7 @@
 				<div>&nbsp;</div>
 				<div>&nbsp;</div>
 				<form id="form-signup_v1" name="form-signup_v1" method="POST"
-					class="validation-form-container" action="/SignUpController">
+					class="validation-form-container" action="#">
 
 					<div class="field">
 						<label><h1>SignUp</h1></label>

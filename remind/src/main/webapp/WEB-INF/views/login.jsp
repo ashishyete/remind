@@ -5,6 +5,10 @@
 <head>
 <meta charset="utf-8">
 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <title>Login-Form</title>
 <meta name="description" content="">
 <meta name="author" content="">
@@ -18,7 +22,14 @@
 // function for Singup page
 
 function signup(){
-	document.forms[0].action="${appUrl}/welcomeBanner";
+	document.forms[0].method="POST";
+	document.forms[0].action="${appUrl}/signup";
+	document.forms[0].submit();
+}
+
+function forgotpass(){
+	document.forms[0].method="POST";
+	document.forms[0].action="${appUrl}/forgotpass";
 	document.forms[0].submit();
 }
 
@@ -34,8 +45,8 @@ function signup(){
 				<div>&nbsp;</div>
 				<div>&nbsp;</div>
 				<div>&nbsp;</div>
-				<form id="form-signup_v1" name="form-signup_v1" method="POST"
-					class="validation-form-container" action="/LoginController">
+				<form:form id="form-signup_v1" name="form-signup_v1" method="GET"
+					class="validation-form-container" action="#">
 
 					<div class="field">
 						<label><h1>Login</h1></label>
@@ -72,16 +83,16 @@ function signup(){
 						value="Clear">
 					<div>&nbsp;</div>
 					<div align="left">
-						<a href="views/ForgotPassword.jsp"><button id="prefill-signup_v1"
+						<a href="javascript:forgotpass();"><button id="prefill-signup_v1"
 								type="button" class="ui mini basic button">
 								Forgot Password ?</button></a>
 					</div>
 					<div align="right">
 						<a href="javascript:signup();"><button id="prefill-signup_v1"
 								type="button" class="ui mini basic button">
-								SignUp!</button></a>
+								SignUp!</button></a>			
 					</div>
-				</form>
+				</form:form>
 			</td>
 			<td width="25%"></td>
 		</tr>
